@@ -14,7 +14,7 @@ class login{
         $correo = $data->correo;
         $pass = $data->pass;
         $response;
-        $sql = "SELECT * FROM usuarios WHERE usuario = :usuario AND clave = :clave";
+        $sql = "SELECT * FROM inicio WHERE usuario = :usuario AND clave = :clave";
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":usuario",$usuario);
