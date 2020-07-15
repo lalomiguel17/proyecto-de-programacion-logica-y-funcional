@@ -3,7 +3,7 @@ function AccessLogin($request){
     $login=new Login();
     return $login->AccessLogin($request);
 }
-class login{
+class Login{
     private $conexion;
     function __construct(){            
         $database=new DbConnect();
@@ -14,11 +14,11 @@ class login{
         $correo = $data->correo;
         $pass = $data->pass;
         $response;
-        $sql = "SELECT * FROM inicio WHERE usuario = :usuario AND clave = :clave";
+        $sql = "SELECT * FROM usuario WHERE correo = :correo AND pass = :pass";
         try{   
             $statement=$this->conexion->prepare($sql);
-            $statement->bindParam(":usuario",$usuario);
-            $statement->bindParam(":clave",$clave);
+            $statement->bindParam(":correo",$correo);
+            $statement->bindParam(":pass",$pass);
             $statement->execute();
             $count=$statement->rowCount();
             if($count)
