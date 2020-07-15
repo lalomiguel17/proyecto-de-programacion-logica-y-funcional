@@ -53,10 +53,6 @@ $app->group('/api', function () use ($app) {
     $app->post('/producto','setproducto');
     $app->get('/areatriangulo','areatriangulo');
 
-    
-    $app->get('/login','getlogin');
-
-    $app->post('/login','login');
-    
+   $app->get('/usuarios','setusarios');
 
 });
