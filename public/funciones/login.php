@@ -1,34 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+<?
 
-<meta charset="UTF-8">
-<meta name="viewport" 
-content="width=device-width,initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" 
-content="ie-edge">
-<title>login con sesion</title>
-</head>
+function getUsuPass($request){
 
-<body>
+    $login=new login();
+    return $login->getUsuPass($request);
+}
 
+class login{
 
-<section>
-<form action="public/funciones/loguear.php" method="POST">
-
-<input type="text" name="usuario">
-<br>
-<input type="password" name="clave">
-<br>
-<button type="submit">Entrada</button>
+    private $conexion;
+    
+    function cxbd(){            
+        $database=new DbConnect();
+        $this->conexion=$database->connect();
+    }
 
 
 
-</form>
-</section>
+function getUsuPass($request){
+    $usuarios;
+    $response;
+    $usuario=json_decode($request->getBody());
+    $sql = "SELECT * FROM sesion WHERE usuario = :usuario AND clave = :clave";
+    try{   
+        $statement=$this->conexion->prepare($sql);
+            $statement->bindParam("usuario",$usuario->correo);
+            $statement->bindParam("clave",$usuario->pass);
+        $statement->execute();
+        $count=$statement->rowCount();
+        if($count)
+        {
+            $response->mensaje="Datos insertados correctamente :)";
+        }
+        else
+        {
+            $response->mensaje="error revise sus datos";
+        }
 
-
-</body>
-</html>
-
+          
+    }catch(Exception $e){
+        $response=$e;
+    }
+    return json_encode($response);
+}
