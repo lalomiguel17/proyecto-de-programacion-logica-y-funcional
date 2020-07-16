@@ -23,11 +23,11 @@ class Login{
             $count=$statement->rowCount();
             if($count)
             {
-                $response="Datos correctos";
+                $response="Datos insertado de manera correcta =)";
             }
             else
             {
-                $response="Error usuario o contrasena incorrecta";
+                $response="Uduario incorrecto =(";
             }
 
               
