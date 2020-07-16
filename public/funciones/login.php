@@ -11,14 +11,14 @@ class Login{
     }
     function AccessLogin($request){
         $data=json_decode($request->getbody());
-        $correo = $data->correo;
-        $pass = $data->pass;
+        $nombre = $data->nombre;
+        $clave = $data->clave;
         $response;
         $sql = "SELECT * FROM usuario WHERE nombre = :nombre AND clave = :clave";
         try{   
             $statement=$this->conexion->prepare($sql);
-            $statement->bindParam(":nombre",$correo);
-            $statement->bindParam(":clave",$pass);
+            $statement->bindParam(":nombre",$nombre);
+            $statement->bindParam(":clave",$clave);
             $statement->execute();
             $count=$statement->rowCount();
             if($count)
