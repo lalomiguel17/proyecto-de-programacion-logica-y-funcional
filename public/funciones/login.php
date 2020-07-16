@@ -14,20 +14,20 @@ class Login{
         $correo = $data->correo;
         $pass = $data->pass;
         $response;
-        $sql = "SELECT * FROM usuario WHERE correo = :correo AND pass = :pass";
+        $sql = "SELECT * FROM usuario WHERE nombre = :nombre AND clave = :clave";
         try{   
             $statement=$this->conexion->prepare($sql);
-            $statement->bindParam(":correo",$correo);
-            $statement->bindParam(":pass",$pass);
+            $statement->bindParam(":nombre",$correo);
+            $statement->bindParam(":clave",$pass);
             $statement->execute();
             $count=$statement->rowCount();
             if($count)
             {
-                $response="Datos correctos";
+                $response="Insersion de datos de manera exitosa =)";
             }
             else
             {
-                $response="Error usuario o contrasena incorrecta";
+                $response="Error =(";
             }
 
               
