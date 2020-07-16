@@ -57,7 +57,10 @@ $app->group('/api', function () use ($app) {
 
     
 
-   $app->get('/login','Accesslogin');
-   $app->post('/login','Accesslogin');
+   $app->get('/login','AccessLogin');
+   $app->post('/login','AccessLogin');
+
+
+
 
 });
