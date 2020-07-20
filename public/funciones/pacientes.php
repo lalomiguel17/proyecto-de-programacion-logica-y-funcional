@@ -1,34 +1,25 @@
 <?php
-include 'cn.php';
 
-//$id=$_POST["idpaciente"];
-$Nombre=$_POST["Nombre"];
-$Edad=$_POST["Edad"];
-$Sexo=$_POST["Sexo"];
-$Direccion=$_POST["Direccion"];
-
-
-$insertar="INSERT INTO Pacientes(Nombre,Edad,Sexo,Direccion)VALUES('$nombre',"
-        . "'$edad','$sexo','$direccion')";
-
-
-$verificar_usuario= mysqli_query($conexion,"SELECT*FROM Pacientes WHERE Pacientes='$Pacientes'");
-
-if(mysqli_num_rows($verificar_usuario)>0){
-    
-   echo'El paciente ya esta registrado'; 
-   exit;
+function setpaciente($request){
+  $pacientes=new Alumno();
+return $pacientes->setAlumno($request);
 }
 
-
-$resultado = mysqli_query($conexion, $insertar);
-if(!$resultado){
-    
-  echo 'error al registrarse';  
-}else{
-    
-    echo 'usuario registrado';    
-    
+function setpaciente($request){
+  $pacientes;
+  $response;
+  $paciente=json_decode($request->getBody());
+  $sql="INSERT INTO paciente(nombre,edad,sexo,direccion) VALUES(:nombre,:edad,:sexo,:direccion)";    
+  try{            
+      $statement=$this->conexion->prepare($sql);
+      $statement->bindParam("nombre",$paciente->nombre);
+      $statement->bindParam("edad",$paciente->edad);
+      $statement->bindParam("sexo",$paciente->sexo;
+      $statement->bindParam("direccion",$paciente->direccion);
+      $statement->execute();
+      $response->mensaje="El paciente se inserto correctamente";
+  }catch(Exception $e){
+      $response=$e;
+  }
+  return json_encode($response);
 }
-
-mysqli_close($conexion);
