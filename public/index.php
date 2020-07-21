@@ -45,6 +45,6 @@ include 'funciones/paciente.php';
 include 'funciones/cronicas.php';
 include 'funciones/tratamiento.php';
 include 'funciones/registro.php';
-
+include 'funciones/sintomas.php';
 $app->run();
 

@@ -39,9 +39,7 @@
             else
             {
                 $response="no se registro el sintoma";
-            }
-
-              
+            }             
         }catch(Exception $e){
             $response=$e;
         }

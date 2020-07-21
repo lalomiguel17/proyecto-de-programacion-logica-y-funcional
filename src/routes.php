@@ -71,5 +71,11 @@ $app->get('/paciente','AccessPaciente');
   
   $app->get('/registro','AccessRegistro');
   $app->post('/registro','AccessRegistro');
+
+
+
+  $app->get('/registro','AccessSintomas');
+  $app->post('/registro','AccessSintomas');
+  
   
 });
