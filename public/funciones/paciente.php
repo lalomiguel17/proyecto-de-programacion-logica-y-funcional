@@ -1,10 +1,10 @@
 <?php
 function AccessPaciente($request){
-    $login=new Login();
-    return $login->AccessPaciente($request);
+    $paciente=new Paciente();
+    return $paciente->AccessPaciente($request);
 }
 
-class Login{
+class Paciente{
     private $conexion;
     function __construct(){            
         $database=new DbConnect();
@@ -22,7 +22,7 @@ function AccessPaciente($request){
        $statement->bindParam("idPaciente",$paciente->idPaciente);
        $statement->bindParam("Nombre",$paciente->Nombre);
        $statement->bindParam("Edad",$paciente->Edad);
-       $statement->bindParam("Sexo",$paciente->Sexo;
+       $statement->bindParam("Sexo",$paciente->Sexo);
        $statement->bindParam("Direccion",$paciente->Direccion);
        $statement->execute();
        $response->mensaje="El paciente se inserto correctamente";
