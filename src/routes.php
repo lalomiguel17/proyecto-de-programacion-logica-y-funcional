@@ -73,8 +73,8 @@ $app->get('/paciente','AccessPaciente');
   $app->get('/tratamiento','AccessTratamiento');
   $app->post('/tratamiento','AccessTratamiento');
 
-  $app->get('/usuario','AccessUsuario');
-  $app->post('/usuario','AccessUsuario')
+  $app->get('/registro','AccessRegistro');
+  $app->post('/registro','AccessRegistro')
 
   
 });

@@ -1,28 +1,28 @@
 <?php
-    function AccessUsuario($request){
-        $usuario=new Usuario();
-        return $usuario->AccessUsuario($request);
+    function AccessRegistro($request){
+        $registro=new Registro();
+        return $registro->AccessRegistro($request);
     }
     
-    class Usuario{
+    class Registro{
         private $conexion;
         function __construct(){            
             $database=new DbConnect();
             $this->conexion=$database->connect();
         }
-    function AccessUsuario($request){
+    function AccessRegistro($request){
         $data=json_decode($request->getbody());
         $idUsuario = $data->idUsuario;
         $Nombre = $data->Nombre;
-        $Correo_Electronico=$data->Correo_Electronico;
+        $Correo=$data->Correo;
         $Clave=$data->Clave;
         $response;
-        $sql = "INSERT INTO Usuarios(idUsuario,Nombre,Correo_Electronico,Clave)VALUES(:idUsuario,:Nombre,:Correo_Electronico,:Clave)";
+        $sql = "INSERT INTO Registros(idUsuario,Nombre,Correo,Clave)VALUES(:idUsuario,:Nombre,:Correo,:Clave)";
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":idUsuario",$idUsuario);
             $statement->bindParam(":Nombre",$Nombre);
-            $statement->bindParam(":Correo_Electronico",$Correo_Electronico);
+            $statement->bindParam(":Correo",$Correo);
             $statement->bindParam(":Clave",$Clave);
             $statement->execute();
             $count=$statement->rowCount();
@@ -33,9 +33,7 @@
             else
             {
                 $response="no se registro el tratamiento =(";
-            }
-
-              
+            }              
         }catch(Exception $e){
             $response=$e;
         }
