@@ -1,10 +1,10 @@
 <?php
-    function Accesstratamiento($request){
-        $tratamiento=new Tratamiento();
+    function AccessTratamiento($request){
+        $tratamiento=new Tratamientos();
         return $paciente->AccessTratamiento($request);
     }
     
-    class Tratamiento{
+    class Tratamientos{
         private $conexion;
         function __construct(){            
             $database=new DbConnect();
