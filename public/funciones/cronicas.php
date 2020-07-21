@@ -1,7 +1,7 @@
 <?php
     function AccessCronicas($request){
         $cronicas=new Cronicas();
-        return $cronicas->AccessCronicas($request);
+        return $cronicas->AccessPaciente($request);
     }
     
     class Cronicas{
@@ -10,12 +10,11 @@
             $database=new DbConnect();
             $this->conexion=$database->connect();
         }
-       function AccessCronicas($request){
+    function AccessCronicas($request){
         $data=json_decode($request->getbody());
         $id_Cronicas = $data->id_Cronicas;
         $Nombre = $data->Nombre;
         $Pacientes_idPaciente = $data->Pacientes_idPaciente;
-       
         $response;
         $sql = "INSERT INTO E_Cronicas(id_Cronicas,Nombre,Pacientes_idPaciente)VALUES(:id_Cronicas,:Nombre,:Pacientes_idPaciente)";
         try{   
@@ -27,11 +26,11 @@
             $count=$statement->rowCount();
             if($count)
             {
-                $response="Insertaste tus datos de enfermedades cronicas";
+                $response="Paciente registrado =)";
             }
             else
             {
-                $response="no se insertaron valores";
+                $response="no se registro el paciente=(";
             }
 
               
