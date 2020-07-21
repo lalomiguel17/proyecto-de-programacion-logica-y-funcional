@@ -65,7 +65,7 @@ $app->get('/paciente','AccessPaciente');
   $app->post('/paciente','AccessPaciente');
 
  
-  $app->get('/cronicas','AccessCronicas');
-  $app->post('/cronicas','AccessCronicas');
+  $app->get('/cronicas','AccessCronics');
+  $app->post('/cronicas','AccessCronics');
 
 });

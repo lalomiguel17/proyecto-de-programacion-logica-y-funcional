@@ -1,5 +1,5 @@
 <?php
-    function AccessCronicas($request){
+    function AccessCronics($request){
         $cronicas=new Cronicas();
         return $paciente->AccessCronicas($request);
     }
@@ -10,7 +10,7 @@
             $database=new DbConnect();
             $this->conexion=$database->connect();
         }
-    function AccessCronicas($request){
+    function AccessCronics($request){
         $data=json_decode($request->getbody());
         $id_Cronicas = $data->id_Cronicas;
         $Nombre = $data->Nombre;
