@@ -63,7 +63,7 @@ $app->group('/api', function () use ($app) {
 
 
    $app->get('/paciente','AccessPaciente');
-   $app->post('/paciente','AccessPaciente');
+  $app->post('/paciente','AccessPaciente');
 
  
     
