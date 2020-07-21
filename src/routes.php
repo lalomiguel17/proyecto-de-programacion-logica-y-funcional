@@ -62,10 +62,10 @@ $app->group('/api', function () use ($app) {
 
 
 
-   $app->get('/login','Accesspaciente');
-   $app->post('/login','Accesspaciente');
+   $app->get('/paciente','AccessPaciente');
+   $app->post('/paciente','AccessPaciente');
 
-
+ 
     
 
 
