@@ -1,9 +1,18 @@
 <?php
-
 function setpaciente($request){
   $paciente=new paciente();
 return $paciente->setpaciente($request);
 }
+class paciente{
+
+  private $conexion;
+  
+  function __construct(){            
+      $database=new DbConnect();
+      $this->conexion=$database->connect();
+  }
+
+
 
 function setpaciente($request){
   $paciente;

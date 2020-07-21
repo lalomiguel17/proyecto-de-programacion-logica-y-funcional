@@ -60,6 +60,9 @@ $app->group('/api', function () use ($app) {
    $app->get('/login','Accesslogin');
    $app->post('/login','Accesslogin');
 
+
+   
+
    $app->post('/insert','setpaciente');
    $app->post('/paciente','setpaciente');
 
