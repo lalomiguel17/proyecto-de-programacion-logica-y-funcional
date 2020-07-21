@@ -18,7 +18,7 @@
         $Sexo = $data->Sexo;
         $Direccion = $data->Direccion;
         $response;
-        $sql = "INSERT INTO Pacientes(idPaciente,Nombre,Edad,Sexo,Direccion) VALUES(:idPaciente,:Nombre,:Edad,:Sexo,Direccion)";
+        $sql = "INSERT INTO Pacientes(idPaciente,Nombre,Edad,Sexo,Direccion)VALUES(:idPaciente,:Nombre,:Edad,:Sexo,:Direccion)";
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":idPaciente",$idPaciente);

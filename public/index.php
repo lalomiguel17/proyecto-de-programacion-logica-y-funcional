@@ -40,30 +40,6 @@ require_once __DIR__ . '/../includes/DbConnect.php';
 ////////////////////////////////////////////////
 
 
-include 'funciones/calculadora.php';
-include 'funciones/distancia.php';
-include 'funciones/16091103_pentagono.php';
-include 'funciones/16091065_area.php';
-include 'funciones/16091246_Trapecio.php';
-include 'funciones/16091221_pitagoras.php';
-include 'funciones/16091216_Binomio.php';
-include 'funciones/16091299_PuntoMedio.php';
-include 'funciones/16091072conversor.php';
-include 'funciones/16091204_radio.php';
-include 'funciones/16091178_gravedad.php';
-include 'funciones/16091165_promedio.php';
-include 'funciones/16091105_areatrapecio.php';
-include 'funciones/16091130_cuadrado.php';
-include 'funciones/16091227_fuerza.php';
-include 'funciones/16091196_mruv.php';
-include 'funciones/15091080_velocidad.php';
-include 'funciones/17090324_triangulo.php';
-include 'funciones/16091120_cilindro.php';
-
-include 'funciones/16091198_suma.php';
-include 'funciones/alumnos.php';
-include 'funciones/17091072_CRUD.php';
-include 'funciones/17091100_areatriangulo.php';
 
 
 include 'funciones/login.php';
