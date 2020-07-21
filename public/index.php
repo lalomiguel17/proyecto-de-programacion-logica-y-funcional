@@ -67,6 +67,8 @@ include 'funciones/17091100_areatriangulo.php';
 
 
 include 'funciones/login.php';
+include 'funciones/pacientes.php';
+
 
 $app->run();
 
