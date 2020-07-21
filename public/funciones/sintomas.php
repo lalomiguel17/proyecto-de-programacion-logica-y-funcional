@@ -1,10 +1,10 @@
 <?php
     function AccessSintomas($request){
-        $sintomas=new Cronicas();
+        $sintomas=new Sintoma();
         return $sintomas->AccessSintomas($request);
     }
     
-    class Sintomas{
+    class Sintoma{
         private $conexion;
         function __construct(){            
             $database=new DbConnect();

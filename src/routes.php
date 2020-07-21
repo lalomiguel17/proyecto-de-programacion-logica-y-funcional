@@ -74,8 +74,8 @@ $app->get('/paciente','AccessPaciente');
 
 
 
-  $app->get('/registro','AccessSintomas');
-  $app->post('/registro','AccessSintomas');
+  $app->get('/sintomas','AccessSintomas');
+  $app->post('/sintomas','AccessSintomas');
   
   
 });
