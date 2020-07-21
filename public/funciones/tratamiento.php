@@ -14,10 +14,6 @@
         $data=json_decode($request->getbody());
         
 
-        `idTratamiento` INT ,
-        `Nombre` VARCHAR(45) ,
-        `Descripcion` VARCHAR(45) 
-
         $idTratamiento = $data->idTratamiento;
         $Nombre = $data->Nombre;
         $Descripcion = $data->Descripcion;

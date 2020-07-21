@@ -67,5 +67,10 @@ $app->get('/paciente','AccessPaciente');
  
   $app->get('/cronicas','AccessCronicas');
   $app->post('/cronicas','AccessCronicas');
+
+
+   
+  $app->get('/tratamiento','AccessTratamiento');
+  $app->post('/tratamiento','AccessTratamiento');
   
 });
