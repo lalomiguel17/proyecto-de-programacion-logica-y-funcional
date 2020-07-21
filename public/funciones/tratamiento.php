@@ -1,10 +1,10 @@
 <?php
     function AccessTratamiento($request){
-        $tratamiento=new Tratamientos();
-        return $paciente->AccessTratamiento($request);
+        $tratamiento=new Tratamiento();
+        return $tratamiento->AccessTratamiento($request);
     }
     
-    class Tratamientos{
+    class Tratamiento{
         private $conexion;
         function __construct(){            
             $database=new DbConnect();
@@ -12,13 +12,11 @@
         }
     function AccessTratamiento($request){
         $data=json_decode($request->getbody());
-        
-
         $idTratamiento = $data->idTratamiento;
         $Nombre = $data->Nombre;
         $Descripcion = $data->Descripcion;
         $response;
-        $sql = "INSERT INTO Tratamiento(idTratamiento,Nombre,Descripcion)VALUES(:idTratamiento,:Nombre,:Descripcion)";
+        $sql = "INSERT INTO Tratamientos(idTratamiento,Nombre,Descripcion)VALUES(:idTratamiento,:Nombre,:Descripcion)";
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":idTratamiento",$idTratamiento);
@@ -28,11 +26,11 @@
             $count=$statement->rowCount();
             if($count)
             {
-                $response="Tratamiento insertado correctamente =)";
+                $response="Tratamiento registrado";
             }
             else
             {
-                $response="no se logro insertar el tratamiento=(";
+                $response="no se registro el tratamiento =(";
             }
 
               
