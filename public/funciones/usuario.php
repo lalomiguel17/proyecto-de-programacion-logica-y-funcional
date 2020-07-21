@@ -14,8 +14,8 @@
         $data=json_decode($request->getbody());
         $idUsuario = $data->idUsuario;
         $Nombre = $data->Nombre;
-        $Correo_Electronico = $data->Correo_Electronico;
-        $Clave= $data->Clave;
+        $Correo_Electronico=$data->Correo_Electronico;
+        $Clave=$data->Clave;
         $response;
         $sql = "INSERT INTO Usuarios(idUsuario,Nombre,Correo_Electronico,Clave)VALUES(:idUsuario,:Nombre,:Correo_Electronico,:Clave)";
         try{   
@@ -28,11 +28,11 @@
             $count=$statement->rowCount();
             if($count)
             {
-                $response="Usuario registrado";
+                $response="Tratamiento registrado";
             }
             else
             {
-                $response="no se pudo registrar el usuario =(";
+                $response="no se registro el tratamiento =(";
             }
 
               
