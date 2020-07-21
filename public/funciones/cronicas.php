@@ -1,7 +1,7 @@
 <?php
     function AccessCronics($request){
         $cronicas=new Cronicas();
-        return $paciente->AccessCronics($request);
+        return $cronicas->AccessCronics($request);
     }
     
     class Cronicas{
