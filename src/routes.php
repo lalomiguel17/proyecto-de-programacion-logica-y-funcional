@@ -61,15 +61,11 @@ $app->group('/api', function () use ($app) {
    $app->post('/login','Accesslogin');
 
 
-
-   $app->get('/paciente','AccessPaciente');
+$app->get('/paciente','AccessPaciente');
   $app->post('/paciente','AccessPaciente');
 
  
   $app->get('/cronicas','AccessCronicas');
   $app->post('/cronicas','AccessCronicas');
-
-
-
 
 });

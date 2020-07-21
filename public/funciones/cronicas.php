@@ -1,7 +1,7 @@
 <?php
     function AccessCronicas($request){
         $cronicas=new Cronicas();
-        return $cronicas->AccessPaciente($request);
+        return $paciente->AccessCronicas($request);
     }
     
     class Cronicas{
@@ -15,6 +15,7 @@
         $id_Cronicas = $data->id_Cronicas;
         $Nombre = $data->Nombre;
         $Pacientes_idPaciente = $data->Pacientes_idPaciente;
+       
         $response;
         $sql = "INSERT INTO E_Cronicas(id_Cronicas,Nombre,Pacientes_idPaciente)VALUES(:id_Cronicas,:Nombre,:Pacientes_idPaciente)";
         try{   
@@ -22,6 +23,7 @@
             $statement->bindParam(":id_Cronicas",$id_Cronicas);
             $statement->bindParam(":Nombre",$Nombre);
             $statement->bindParam(":Pacientes_idPaciente",$Pacientes_idPaciente);
+        
             $statement->execute();
             $count=$statement->rowCount();
             if($count)
