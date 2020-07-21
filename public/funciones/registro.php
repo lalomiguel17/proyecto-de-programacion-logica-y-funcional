@@ -1,7 +1,7 @@
 <?php
     function AccessRegistro($request){
         $registro=new Registro();
-        return $registro->AccessPaciente($request);
+        return $registro->AccessRegistro($request);
     }
     class Registro{
         private $conexion;
