@@ -66,7 +66,8 @@ $app->group('/api', function () use ($app) {
   $app->post('/paciente','AccessPaciente');
 
  
-    
+  $app->get('/cronicas','AccessCronicas');
+  $app->post('/cronicas','AccessCronicas');
 
 
 
