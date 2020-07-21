@@ -1,23 +1,22 @@
 <?php
-function setpaciente($request){
-  $paciente=new paciente();
-return $paciente->setpaciente($request);
+function AccessPaciente($request){
+    $login=new Login();
+    return $login->AccessPaciente($request);
 }
-class paciente{
 
-  private $conexion;
-  
-  function __construct(){            
-      $database=new DbConnect();
-      $this->conexion=$database->connect();
-  }
-
+class Login{
+    private $conexion;
+    function __construct(){            
+        $database=new DbConnect();
+        $this->conexion=$database->connect();
+    }
 
 
-function setpaciente($request){
+
+function AccessPaciente($request){
   $paciente;
   $response;
-  $paciente=json_decode($request->getBody());
+  $pacientes=json_decode($request->getBody());
   $sql="INSERT INTO Pacientes(idPaciente,Nombre,Edad,Sexo,Direccion) VALUES(:idPaciente,:Nombre,:Edad,:Sexo,:Direccion)";    
   try{            
       $statement=$this->conexion->prepare($sql);

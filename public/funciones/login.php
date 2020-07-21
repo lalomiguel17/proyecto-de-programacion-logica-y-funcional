@@ -10,6 +10,9 @@ class Login{
         $database=new DbConnect();
         $this->conexion=$database->connect();
     }
+
+
+    
     function AccessLogin($request){
         $data=json_decode($request->getbody());
         $nombre = $data->nombre;
