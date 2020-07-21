@@ -1,12 +1,12 @@
 <?php
 
 function setpaciente($request){
-  $pacientes=new Alumno();
-return $pacientes->setAlumno($request);
+  $paciente=new paciente();
+return $paciente->setpaciente($request);
 }
 
 function setpaciente($request){
-  $pacientes;
+  $paciente;
   $response;
   $paciente=json_decode($request->getBody());
   $sql="INSERT INTO Pacientes(idPaciente,Nombre,Edad,Sexo,Direccion) VALUES(:idPaciente,:Nombre,:Edad,:Sexo,:Direccion)";    
