@@ -26,11 +26,11 @@
             $count=$statement->rowCount();
             if($count)
             {
-                $response="Paciente registrado =)";
+                $response="Registro exitoso";
             }
             else
             {
-                $response="no se registro el paciente=(";
+                $response="no se registro";
             }
 
               
