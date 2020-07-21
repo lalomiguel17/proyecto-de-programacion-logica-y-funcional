@@ -11,8 +11,7 @@ class Login{
         $this->conexion=$database->connect();
     }
 
-
-
+    
 function AccessPaciente($request){
     $paciente;
     $response;

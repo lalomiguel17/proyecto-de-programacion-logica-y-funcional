@@ -1,4 +1,4 @@
-<?
+<?php
 function AccessLogin($request){
     $login=new Login();
     return $login->AccessLogin($request);
@@ -12,7 +12,7 @@ class Login{
     }
 
 
-    
+
     function AccessLogin($request){
         $data=json_decode($request->getbody());
         $nombre = $data->nombre;
