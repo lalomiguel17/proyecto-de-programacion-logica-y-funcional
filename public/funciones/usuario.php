@@ -15,15 +15,15 @@
         $idUsuario = $data->idUsuario;
         $Nombre = $data->Nombre;
         $Correo_Electronico = $data->Correo_Electronico;
-        $Contraseña = $data->Contraseña;
+        $Clave= $data->Clave;
         $response;
-        $sql = "INSERT INTO Usuarios(idUsuario,Nombre,Correo_Electronico,Contraseña)VALUES(:idUsuario,:Nombre,:Correo_Electronico,:Contraseña)";
+        $sql = "INSERT INTO Usuarios(idUsuario,Nombre,Correo_Electronico,Clave)VALUES(:idUsuario,:Nombre,:Correo_Electronico,:Clave)";
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":idUsuario",$idUsuario);
             $statement->bindParam(":Nombre",$Nombre);
             $statement->bindParam(":Correo_Electronico",$Correo_Electronico);
-            $statement->bindParam(":Contraseña",$Contraseña);
+            $statement->bindParam(":Clave",$Clave);
             $statement->execute();
             $count=$statement->rowCount();
             if($count)
