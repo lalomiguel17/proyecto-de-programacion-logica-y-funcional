@@ -18,8 +18,8 @@ class Login{
         $sql = "SELECT * FROM Registros WHERE Correo = :Correo AND Clave = :Clave";
         try{   
             $statement=$this->conexion->prepare($sql);
-            $statement->bindParam(":Correo",$nombre);
-            $statement->bindParam(":Clave",$clave);
+            $statement->bindParam(":Correo",$Correo);
+            $statement->bindParam(":Clave",$Clave);
             $statement->execute();
             $count=$statement->rowCount();
             if($count)
