@@ -12,23 +12,23 @@ class Login{
     }
     function AccessLogin($request){
         $data=json_decode($request->getbody());
-        $nombre = $data->nombre;
-        $clave = $data->clave;
+        $Correo = $data->Correo;
+        $Clave = $data->Clave;
         $response;
-        $sql = "SELECT * FROM Registros WHERE Correo = :Correo AND clave = :clave";
+        $sql = "SELECT * FROM Registros WHERE Correo = :Correo AND Clave = :Clave";
         try{   
             $statement=$this->conexion->prepare($sql);
-            $statement->bindParam(":nombre",$nombre);
-            $statement->bindParam(":clave",$clave);
+            $statement->bindParam(":Correo",$nombre);
+            $statement->bindParam(":Clave",$clave);
             $statement->execute();
             $count=$statement->rowCount();
             if($count)
             {
-                $response="Datos insertado de manera correcta =)";
+                $response="has iniciado sesion =)";
             }
             else
             {
-                $response="Usuario incorrecto =(";
+                $response="No has iniciado sesion checa tus valores =(";
             }
 
               
