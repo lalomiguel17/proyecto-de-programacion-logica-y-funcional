@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>formulario</title>
+<link href="../css/cuest.css" rel="stylesheet" type="text/css">
+<script src= "validacion.js"> </script>
+</head>
+
+
+<body>
+<h1>Contesta las siguientes preguntas: </h1>
+
+<form   method="post" action ="registrar.php"class="form-register" onsubmit="return validar();">
+<h2 class ="form__titulo">previamente</h2>
+<div class ="contenedor-inputs">
+
+
+      
+<p>Ha estado tomando las medidas de prevencion? </p> 
+
+    <input type="radio" name="i" values="i">SI 
+    <input type="radio" name="i" values="i">NO
+ 
+
+<p>Has tenido contacto con alguin  infectado ? </p> 
+    
+    <input type="radio" name="w" values="w">SI 
+    <input type="radio" name="w" values="w">NO
+ 
+
+    
+<p>Has tomado algun medicamento? </p> 
+    
+    <input type="radio" name="j" values="j">SI 
+    <input type="radio" name="j" values="j">NO
+    
+    
+<p>Qué medicamentos has tomado? </p>  
+    
+    
+    <from action="">
+      <select name="Medicamento">
+       <option value="" selected></option>
+       <option value="0">Antibiotico</option>
+       <option value="1">Antinflamatorio</option>
+       <option value="2">Antigripal</option>
+       <option value="3">Aspirina</option>
+       <option value="4">Mas de una</option>
+      </select>
+     </from>
+    
+               
+ <p>Hace cuanto empesate con los sintomas ? </p> 
+    
+    <select name="dias">
+       <option value="" selected></option>
+       <option value="0">1 a 2</option>
+       <option value="1">2 a 4</option>
+       <option value="2">4 a 6</option>
+      </select>
+     </from>
+    
+               
+    <p>Cuales fueron los primeros sintomas ? </p> 
+    
+    <select name="Sintommas">
+       <option value="" selected></option>
+       <option value="0">fiebre, tos, fatiga</option>
+       <option value="1">dolor pecho, dolor espalda, dificultad respirar</option>
+       <option value="2">ambas</option>
+      </select>
+     </from>
+    
+    
+<p>Padeses alguna enfermedad cronica? </p> 
+    
+    <input type="radio" name="Ñ" values="Ñ">SI 
+    <input type="radio" name="Ñ" values="Ñ">NO
+    
+    
+<p>En caso de que si selecciona alguna </p> 
+    
+    <select name="Enfermedad">
+       <option value="" selected></option>
+       <option value="0">Enfermedades respiratorias, tabaquismo</option>
+       <option value="1">Hipertencion o Diabetes</option>
+       <option value="2">colesterol, higado graso</option>
+      </select>
+     </from>
+  
+<p>
+    <input type="submit" value="Enviar" id="enviar"/> <p> 
+    <input type="submit" value="Borrar" id="borrar"/>
+
+
+</div>
+</form>
+
+</body>
+</html>
+
+
+
