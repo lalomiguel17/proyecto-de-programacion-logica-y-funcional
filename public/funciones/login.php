@@ -15,7 +15,7 @@ class Login{
         $nombre = $data->nombre;
         $clave = $data->clave;
         $response;
-        $sql = "SELECT * FROM usuario WHERE nombre = :nombre AND clave = :clave";
+        $sql = "SELECT * FROM Registros WHERE Correo = :Correo AND clave = :clave";
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":nombre",$nombre);
@@ -28,7 +28,7 @@ class Login{
             }
             else
             {
-                $response="Uduario incorrecto =(";
+                $response="Usuario incorrecto =(";
             }
 
               
