@@ -88,7 +88,7 @@ $app->get('/paciente','AccessPaciente');
   
 
   
-  $app->get('/PR','AccessPR');
-  $app->post('/PR','AccessPR');
+  $app->get('/pars','Accesspars');
+  $app->post('/pars','Accesspars');
   
 });

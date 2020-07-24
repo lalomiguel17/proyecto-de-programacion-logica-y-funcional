@@ -49,6 +49,6 @@ include 'funciones/sintomas.php';
 include 'funciones/preguntas.php';
 include 'funciones/PR.php';
 include 'funciones/respuestas.php';
-include 'funciones/PR.php';
+include 'funciones/pars.php';
 $app->run();
 

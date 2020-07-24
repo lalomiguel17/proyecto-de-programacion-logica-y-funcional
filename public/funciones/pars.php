@@ -1,16 +1,16 @@
 <?php
-    function AccessPR($request){
-        $PR=new PRS();
-        return $PR->AccessPR($request);
+    function Accesspars($request){
+        $pars=new Par();
+        return $pars->Accesspars($request);
     }
     
-    class PRS{
+    class Par{
         private $conexion;
         function __construct(){            
             $database=new DbConnect();
             $this->conexion=$database->connect();
         }
-    function AccessPR($request){
+    function Accesspars($request){
         $data=json_decode($request->getbody());
         $idRespuesta = $data->idRespuesta;
         $idPregunta = $data->idPregunta);
