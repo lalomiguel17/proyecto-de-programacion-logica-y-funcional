@@ -30,9 +30,7 @@
             else
             {
                 $response="no se registro el PR =(";
-            }
-
-              
+            }           
         }catch(Exception $e){
             $response=$e;
         }

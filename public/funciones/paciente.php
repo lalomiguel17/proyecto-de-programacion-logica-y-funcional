@@ -2,8 +2,7 @@
     function AccessPaciente($request){
         $paciente=new Paciente();
         return $paciente->AccessPaciente($request);
-    }
-    
+    }    
     class Paciente{
         private $conexion;
         function __construct(){            
@@ -34,8 +33,6 @@
             {
                 $response="no se registro el paciente =(";
             }
-
-              
         }catch(Exception $e){
             $response=$e;
         }

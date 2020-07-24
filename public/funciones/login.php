@@ -3,7 +3,6 @@ function AccessLogin($request){
     $login=new Login();
     return $login->AccessLogin($request);
 }
-
 class Login{
     private $conexion;
     function __construct(){            
@@ -29,9 +28,7 @@ class Login{
             else
             {
                 $response="No has iniciado sesion checa tus valores =(";
-            }
-
-              
+            }            
         }catch(Exception $e){
             $response=$e;
         }

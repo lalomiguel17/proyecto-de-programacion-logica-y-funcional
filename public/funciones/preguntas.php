@@ -3,7 +3,6 @@
         $preguntas=new Pregunta();
         return $preguntas->Accesspregunta($request);
     }
-    
     class Pregunta{
         private $conexion;
         function __construct(){            
@@ -12,13 +11,14 @@
         }
     function Accesspregunta($request){
         $data=json_decode($request->getbody());
-        $idPregunta = $data->idPregunta;
+       // $idPregunta = $data->idPregunta;
         $descripcion_Pregunta = $data->descripcion_Pregunta;
         $response;
-        $sql = "INSERT INTO Preguntas(idPregunta,descripcion_Pregunta)VALUES(:idPregunta,:descripcion_Pregunta)";
+      //  $sql = "INSERT INTO Preguntas(idPregunta,descripcion_Pregunta)VALUES(:idPregunta,:descripcion_Pregunta)";
+      $sql = "INSERT INTO Preguntas(descripcion_Pregunta)VALUES(:descripcion_Pregunta)";
         try{   
             $statement=$this->conexion->prepare($sql);
-            $statement->bindParam(":idPregunta",$idPregunta);
+           // $statement->bindParam(":idPregunta",$idPregunta);
             $statement->bindParam(":descripcion_Pregunta",$descripcion_Pregunta);
             $statement->execute();
             $count=$statement->rowCount();
@@ -29,9 +29,7 @@
             else
             {
                 $response="pregunta no registrada";
-            }
-
-              
+            }             
         }catch(Exception $e){
             $response=$e;
         }

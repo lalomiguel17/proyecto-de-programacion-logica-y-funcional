@@ -31,9 +31,7 @@
             else
             {
                 $response="no se registro";
-            }
-
-              
+            }      
         }catch(Exception $e){
             $response=$e;
         }
