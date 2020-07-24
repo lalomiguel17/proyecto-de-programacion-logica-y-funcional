@@ -1,16 +1,16 @@
 <?php
-    function Accesspar($request){
-        $pars=new Par();
-        return $pars->Accesspar($request);
+    function AccessPars($request){
+        $pars=new par();
+        return $pars->AccessPars($request);
     }
     
-    class Par{
+    class par{
         private $conexion;
         function __construct(){            
             $database=new DbConnect();
             $this->conexion=$database->connect();
         }
-    function Accesspars($request){
+    function AccessPars($request){
         $data=json_decode($request->getbody());
         $idRespuesta = $data->idRespuesta;
         $idPregunta = $data->idPregunta;
@@ -24,13 +24,12 @@
             $count=$statement->rowCount();
             if($count)
             {
-                $response="id registrados";
+                $response="Registro exitoso";
             }
             else
             {
-                $response="id no registrados";
+                $response="no se registro";
             }
-
 
               
         }catch(Exception $e){
