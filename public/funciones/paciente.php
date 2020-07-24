@@ -12,17 +12,15 @@
         }
     function AccessPaciente($request){
         $data=json_decode($request->getbody());
-        $idPaciente = $data->idPaciente;
-        $Nombre = $data->Nombre;
+        $Nombre_Paciente= $data->Nombre_Paciente;
         $Edad = $data->Edad;
         $Sexo = $data->Sexo;
         $Direccion = $data->Direccion;
         $response;
-        $sql = "INSERT INTO Pacientes(idPaciente,Nombre,Edad,Sexo,Direccion)VALUES(:idPaciente,:Nombre,:Edad,:Sexo,:Direccion)";
+        $sql = "INSERT INTO Pacientes(Nombre_Paciente,Edad,Sexo,Direccion)VALUES(:Nombre_Paciente,:Edad,:Sexo,:Direccion)";
         try{   
             $statement=$this->conexion->prepare($sql);
-            $statement->bindParam(":idPaciente",$idPaciente);
-            $statement->bindParam(":Nombre",$Nombre);
+            $statement->bindParam(":Nombre_Paciente",$Nombre_Paciente);
             $statement->bindParam(":Edad",$Edad);
             $statement->bindParam(":Sexo",$Sexo);
             $statement->bindParam(":Direccion",$Direccion);
@@ -34,7 +32,7 @@
             }
             else
             {
-                $response="no se registro el paciente=(";
+                $response="no se registro el paciente =(";
             }
 
               

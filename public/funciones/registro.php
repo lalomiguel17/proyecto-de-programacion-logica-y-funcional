@@ -11,16 +11,15 @@
         }
     function AccessRegistro($request){
         $data=json_decode($request->getbody());
-        $idUsuario = $data->idUsuario;
-        $Nombre = $data->Nombre;
+        $Nombre_Registro = $data->Nombre_Registro;
         $Correo = $data->Correo;
         $Clave = $data->Clave;
         $response;
-        $sql = "INSERT INTO Registros(idUsuario,Nombre,Correo,Clave)VALUES(:idUsuario,:Nombre,:Correo,:Clave)";
+        $sql = "INSERT INTO Registros(Nombre_Registro,Correo,Clave)VALUES(:Nombre_Registro,:Correo,:Clave)";
         try{   
             $statement=$this->conexion->prepare($sql);
-            $statement->bindParam(":idUsuario",$idUsuario);
-            $statement->bindParam(":Nombre",$Nombre);
+           
+            $statement->bindParam(":Nombre_Registro",$Nombre_Registro);
             $statement->bindParam(":Correo",$Correo);
             $statement->bindParam(":Clave",$Clave);
             $statement->execute();
