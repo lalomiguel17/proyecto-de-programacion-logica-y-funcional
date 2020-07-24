@@ -1,7 +1,7 @@
 <?php
-    function Accesspars($request){
+    function Accesspar($request){
         $pars=new Par();
-        return $pars->Accesspars($request);
+        return $pars->Accesspar($request);
     }
     
     class Par{

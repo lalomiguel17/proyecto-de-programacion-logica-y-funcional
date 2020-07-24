@@ -74,8 +74,8 @@ $app->get('/paciente','AccessPaciente');
 
 
 
-  $app->get('/sintomas','AccessSintomas');
-  $app->post('/sintomas','AccessSintomas');
+  $app->get('/sintomas','AccessSintoma');
+  $app->post('/sintomas','AccessSintoma');
 
 
 
@@ -88,7 +88,7 @@ $app->get('/paciente','AccessPaciente');
   
 
   
-  $app->get('/pars','Accesspars');
-  $app->post('/pars','Accesspars');
+  $app->get('/pars','Accesspar');
+  $app->post('/pars','Accesspar');
   
 });

@@ -1,7 +1,7 @@
 <?php
-    function AccessSintomas($request){
+    function AccessSintoma($request){
         $sintomas=new Sintoma();
-        return $sintomas->AccessSintomas($request);
+        return $sintomas->AccessSintoma($request);
     }
     
     class Sintoma{
@@ -10,7 +10,7 @@
             $database=new DbConnect();
             $this->conexion=$database->connect();
         }
-    function AccessSintomas($request){
+    function AccessSintoma($request){
         $data=json_decode($request->getbody());
         $idSintoma = $data->idSintoma;
         $Descripcion_Sintoma = $data->Descripcion_Sintoma;
