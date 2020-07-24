@@ -13,7 +13,7 @@
     function Accesspars($request){
         $data=json_decode($request->getbody());
         $idRespuesta = $data->idRespuesta;
-        $idPregunta = $data->idPregunta);
+        $idPregunta = $data->idPregunta;
         $response;
         $sql = "INSERT INTO PR(idRespuesta,idPregunta)VALUES(:idRespuesta,:idPregunta)";
         try{   
