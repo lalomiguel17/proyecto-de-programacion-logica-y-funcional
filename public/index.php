@@ -48,6 +48,6 @@ include 'funciones/registro.php';
 include 'funciones/sintomas.php';
 include 'funciones/preguntas.php';
 include 'funciones/respuestas.php';
-include 'funciones/pars.php';
+include 'funciones/finals.php';
 $app->run();
 
