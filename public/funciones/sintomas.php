@@ -21,7 +21,7 @@
         $idPregunta= $data->idPregunta;
         $response;
         $sql = "INSERT INTO Sintomas(idSintoma,Descripcion_Sintoma,Tiempo,Puntaje,idPaciente,idTratamiento,idPregunta)
-        VALUES(:idSintoma,:Descripcion_Sintoma,:Tiempo,:Puntaje,:idPaciente,:idTratamiento,idPregunta)";
+        VALUES(:idSintoma,:Descripcion_Sintoma,:Tiempo,:Puntaje,:idPaciente,:idTratamiento,:idPregunta)";
 
         try{   
             $statement=$this->conexion->prepare($sql);

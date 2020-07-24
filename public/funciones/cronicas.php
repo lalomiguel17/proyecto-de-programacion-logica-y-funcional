@@ -1,10 +1,10 @@
 <?php
     function AccessCronicas($request){
-        $cronicas=new Cronicas();
+        $cronicas=new Cronica();
         return $cronicas->AccessCronicas($request);
     }
     
-    class Cronicas{
+    class Cronica{
         private $conexion;
         function __construct(){            
             $database=new DbConnect();
