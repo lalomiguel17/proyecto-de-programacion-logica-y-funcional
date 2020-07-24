@@ -13,23 +13,25 @@
     function AccessSintomas($request){
         $data=json_decode($request->getbody());
         $idSintoma = $data->idSintoma;
-        $Descripcion = $data->Descripcion;
+        $Descripcion_Sintoma = $data->Descripcion_Sintoma;
         $Tiempo = $data->Tiempo;
         $Puntaje = $data->Puntaje;
-        $Pacientes_idPaciente = $data->Pacientes_idPaciente;
-        $Tratamientos_idTratamiento= $data->Tratamientos_idTratamiento;
+        $idPaciente = $data->idPaciente;
+        $idTratamiento= $data->idTratamiento;
+        $idPregunta= $data->idPregunta;
         $response;
-        $sql = "INSERT INTO Sintomas(idSintoma,Descripcion,Tiempo,Puntaje,Pacientes_idPaciente,Tratamientos_idTratamiento)
-        VALUES(:idSintoma,:Descripcion,:Tiempo,:Puntaje,:Pacientes_idPaciente,:Tratamientos_idTratamiento)";
+        $sql = "INSERT INTO Sintomas(idSintoma,Descripcion_Sintoma,Tiempo,Puntaje,idPaciente,idTratamiento,idPregunta)
+        VALUES(:idSintoma,:Descripcion_Sintoma,:Tiempo,:Puntaje,:idPaciente,:idTratamiento,idPregunta)";
 
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":idSintoma",$idSintoma);
-            $statement->bindParam(":Descripcion",$Descripcion);
+            $statement->bindParam(":Descripcion_Sintoma",$Descripcion_Sintoma);
             $statement->bindParam(":Tiempo",$Tiempo);
             $statement->bindParam(":Puntaje",$Puntaje);
-            $statement->bindParam(":Pacientes_idPaciente",$Pacientes_idPaciente);
-            $statement->bindParam(":Tratamientos_idTratamiento",$Tratamientos_idTratamiento);
+            $statement->bindParam(":idPaciente",$idPaciente);
+            $statement->bindParam(":idTratamiento",$idTratamiento);
+            $statement->bindParam(":idPregunta",$idPregunta);
             $statement->execute();
             $count=$statement->rowCount();
             if($count)

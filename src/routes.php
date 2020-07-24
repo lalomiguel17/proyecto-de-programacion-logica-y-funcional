@@ -82,6 +82,11 @@ $app->get('/paciente','AccessPaciente');
   
   $app->get('/preguntas','Accesspregunta');
   $app->post('/preguntas','Accesspregunta');
+
+  $app->get('/respuestas','Accessrespuesta');
+  $app->post('/respuestas','Accessrespuesta');
+  
+
   
   
 });
