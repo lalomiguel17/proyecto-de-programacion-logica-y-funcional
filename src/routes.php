@@ -76,6 +76,12 @@ $app->get('/paciente','AccessPaciente');
 
   $app->get('/sintomas','AccessSintomas');
   $app->post('/sintomas','AccessSintomas');
+
+
+
+  
+  $app->get('/preguntas','Accesspregunta');
+  $app->post('/preguntas','Accesspregunta');
   
   
 });

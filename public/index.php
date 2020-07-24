@@ -46,5 +46,8 @@ include 'funciones/cronicas.php';
 include 'funciones/tratamiento.php';
 include 'funciones/registro.php';
 include 'funciones/sintomas.php';
+include 'funciones/preguntas.php';
+
+
 $app->run();
 

@@ -13,14 +13,14 @@
     function AccessTratamiento($request){
         $data=json_decode($request->getbody());
         $idTratamiento = $data->idTratamiento;
-        $Nombre = $data->Nombre;
+        $Nombre_Tratamiento = $data->Nombre_Tratamiento;
         $Descripcion = $data->Descripcion;
         $response;
-        $sql = "INSERT INTO Tratamientos(idTratamiento,Nombre,Descripcion)VALUES(:idTratamiento,:Nombre,:Descripcion)";
+        $sql = "INSERT INTO Tratamientos(idTratamiento,Nombre_Tratamiento,Descripcion)VALUES(:idTratamiento,:Nombre_Tratamiento,:Descripcion)";
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":idTratamiento",$idTratamiento);
-            $statement->bindParam(":Nombre",$Nombre);
+            $statement->bindParam(":Nombre_Tratamiento",$Nombre_Tratamiento);
             $statement->bindParam(":Descripcion",$Descripcion);
             $statement->execute();
             $count=$statement->rowCount();
