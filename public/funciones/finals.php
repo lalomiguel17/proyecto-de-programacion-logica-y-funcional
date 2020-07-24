@@ -10,16 +10,17 @@
             $database=new DbConnect();
             $this->conexion=$database->connect();
         }
-    function Accessfinal($request){
+    function Accessfinals($request){
         $data=json_decode($request->getbody());
         $idRespuesta = $data->idRespuesta;
-        $idPregunta = $data->idPregunta;
+        $idPregunta = $data->idPPregunta;
         $response;
         $sql = "INSERT INTO PR(idRespuesta,idPregunta)VALUES(:idRespuesta,:idPregunta)";
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":idRespuesta",$idRespuesta);
             $statement->bindParam(":idPregunta",$idPregunta);
+         
             $statement->execute();
             $count=$statement->rowCount();
             if($count)
@@ -36,5 +37,5 @@
             $response=$e;
         }
         return json_encode($response);
-    }    
+    }   
 }
