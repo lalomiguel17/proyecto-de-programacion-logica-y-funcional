@@ -14,14 +14,16 @@
         $Nombre_Registro = $data->Nombre_Registro;
         $Correo = $data->Correo;
         $Clave = $data->Clave;
+        $idPaciente = $data->idPaciente;
         $response;
-        $sql = "INSERT INTO Registros(Nombre_Registro,Correo,Clave)VALUES(:Nombre_Registro,:Correo,:Clave)";
+        $sql = "INSERT INTO Registros(Nombre_Registro,Correo,Clave,idPaciente)VALUES(:Nombre_Registro,:Correo,:Clave,:idPaciente)";
         try{   
             $statement=$this->conexion->prepare($sql);
            
             $statement->bindParam(":Nombre_Registro",$Nombre_Registro);
             $statement->bindParam(":Correo",$Correo);
             $statement->bindParam(":Clave",$Clave);
+            $statement->bindParam(":idPaciente",$idPaciente);
             $statement->execute();
             $count=$statement->rowCount();
             if($count)
