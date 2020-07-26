@@ -15,7 +15,7 @@
         $idRespuesta = $data->idRespuesta;
         $descripcion_Respuesta = $data->descripcion_Respuesta;
         $response;
-        $sql = "INSERT INTO Respuestas(idRespuesta,descripcion_Respuesta)VALUES(:idRespuesta,:descripcion_Respuesta)";
+        $sql = "INSERT INTO Respuestas(idRespuesta,,porcentaje,descripcion_Respuesta)VALUES(:idRespuesta,:descripcion_Respuesta)";
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":idRespuesta",$idRespuesta);
