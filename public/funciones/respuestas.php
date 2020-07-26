@@ -13,13 +13,23 @@
     function Accessrespuesta($request){
         $data=json_decode($request->getbody());
         $idRespuesta = $data->idRespuesta;
+        $porcentaje = $data->porcentaje;
         $descripcion_Respuesta = $data->descripcion_Respuesta;
+        $idPregunta = $data->idPregunta;
+        $idPaciente = $data->idPaciente;
+        $idTratamiento = $data->idTratamiento;
+
         $response;
-        $sql = "INSERT INTO Respuestas(idRespuesta,,porcentaje,descripcion_Respuesta)VALUES(:idRespuesta,:descripcion_Respuesta)";
+        $sql = "INSERT INTO Respuestas(idRespuesta,porcentaje,descripcion_Respuesta,idPregunta,idPaciente,idTratamiento)
+        VALUES(:idRespuesta,:porcentaje,:descripcion_Respuesta,:idPregunta,:idPaciente,:idTratamiento)";
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":idRespuesta",$idRespuesta);
+            $statement->bindParam(":porcentaje",$porcentaje);
             $statement->bindParam(":descripcion_Respuesta",$descripcion_Respuesta);
+            $statement->bindParam(":idPregunta",$idPregunta);
+            $statement->bindParam(":idPaciente",$idPaciente);
+            $statement->bindParam(":idTratamiento",$idTratamiento);
             $statement->execute();
             $count=$statement->rowCount();
             if($count)
