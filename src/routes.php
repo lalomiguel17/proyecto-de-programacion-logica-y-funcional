@@ -90,5 +90,16 @@ $app->get('/paciente','AccessPaciente');
   $app->get('/pr','AccessPR');
   $app->post('/pr','AccessPR');
 
+
+  $app->get('/select','getporcentaje');
+  $app->post('/select','getporcentaje');
+ 
+  $app->get('/select','getterminado');
+  $app->post('/select','getterminado');
+
+
+  $app->get('/select','getporcentaje');
+ $app->post('/select','getporcentaje');
+
   
 });

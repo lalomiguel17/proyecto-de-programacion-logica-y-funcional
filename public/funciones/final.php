@@ -1,6 +1,6 @@
 <?
 function getporcentaje($request){
-    $finals=new Final();
+$finals=new Final();
 return $finals->getPorcentaje($request);
 }
 function getterminado($request){
