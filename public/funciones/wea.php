@@ -1,11 +1,11 @@
 <?
 
-function getTest($request){
-    $final= new Test();
-return $final->getTest($request);
+function getWea($request){
+    $wea= new Wea();
+return $wea->getWea($request);
 }
 
-class Test{
+class Wea{
 
     private $conexion;
     
@@ -15,7 +15,7 @@ class Test{
     }
 
     //buscar
-    function getTest(){
+    function getWea(){
         $registro;
         $response;
        // $sql="SELECT * FROM Respuestas;";    

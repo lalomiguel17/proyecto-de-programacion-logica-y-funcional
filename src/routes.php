@@ -95,6 +95,15 @@ $app->get('/paciente','AccessPaciente');
   $app->post('/final','getTest');
 
 
+  $app->get('/wea','getWea');
+  $app->post('/wea','getWea');
+
+
+  $app->get('/holaquehace','getHolaquehace');
+  $app->post('/holaquehace','getHolaquehace');
+
+
+
 
   
 });

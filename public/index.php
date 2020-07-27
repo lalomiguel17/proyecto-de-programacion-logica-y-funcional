@@ -48,7 +48,11 @@ include 'funciones/registro.php';
 //include 'funciones/sintomas.php';
 //include 'funciones/preguntas.php';
 include 'funciones/respuestas.php';
-include 'funciones/final.php';
+
+
+include 'funciones/final.php';//funcion de select 1
+include 'funciones/wea.php';//funcion de select 2
+include 'funciones/holaquehace.php';//funcion de select 2
 
 $app->run();
 
