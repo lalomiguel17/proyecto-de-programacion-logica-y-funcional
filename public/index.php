@@ -42,12 +42,13 @@ require_once __DIR__ . '/../includes/DbConnect.php';
 
 include 'funciones/login.php';
 include 'funciones/paciente.php';
-include 'funciones/cronicas.php';
+
 include 'funciones/tratamiento.php';
 include 'funciones/registro.php';
-include 'funciones/sintomas.php';
-include 'funciones/preguntas.php';
+//include 'funciones/sintomas.php';
+//include 'funciones/preguntas.php';
 include 'funciones/respuestas.php';
 include 'funciones/final.php';
+
 $app->run();
 

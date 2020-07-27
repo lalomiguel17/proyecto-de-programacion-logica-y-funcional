@@ -12,7 +12,7 @@
         }
     function Accessrespuesta($request){
         $data=json_decode($request->getbody());
-        $idRespuesta = $data->idRespuesta;
+        //$idRespuesta = $data->idRespuesta;
         $porcentaje = $data->porcentaje;
         $descripcion_Respuesta = $data->descripcion_Respuesta;
         $idPregunta = $data->idPregunta;
@@ -20,11 +20,11 @@
         $idTratamiento = $data->idTratamiento;
 
         $response;
-        $sql = "INSERT INTO Respuestas(idRespuesta,porcentaje,descripcion_Respuesta,idPregunta,idPaciente,idTratamiento)
-        VALUES(:idRespuesta,:porcentaje,:descripcion_Respuesta,:idPregunta,:idPaciente,:idTratamiento)";
+        $sql = "INSERT INTO Respuestas(porcentaje,descripcion_Respuesta,idPregunta,idPaciente,idTratamiento)
+        VALUES(:porcentaje,:descripcion_Respuesta,:idPregunta,:idPaciente,:idTratamiento)";
         try{   
             $statement=$this->conexion->prepare($sql);
-            $statement->bindParam(":idRespuesta",$idRespuesta);
+           // $statement->bindParam(":idRespuesta",$idRespuesta);
             $statement->bindParam(":porcentaje",$porcentaje);
             $statement->bindParam(":descripcion_Respuesta",$descripcion_Respuesta);
             $statement->bindParam(":idPregunta",$idPregunta);
