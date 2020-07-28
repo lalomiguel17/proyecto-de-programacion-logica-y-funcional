@@ -17,11 +17,11 @@
         $descripcion_Respuesta = $data->descripcion_Respuesta;
         $idPregunta = $data->idPregunta;
         $idPaciente = $data->idPaciente;
-        $idTratamiento = $data->idTratamiento;
+        
 
         $response;
-        $sql = "INSERT INTO Respuestas(porcentaje,descripcion_Respuesta,idPregunta,idPaciente,idTratamiento)
-        VALUES(:porcentaje,:descripcion_Respuesta,:idPregunta,:idPaciente,:idTratamiento)";
+        $sql = "INSERT INTO Respuestas(porcentaje,descripcion_Respuesta,idPregunta,idPaciente)
+        VALUES(:porcentaje,:descripcion_Respuesta,:idPregunta,:idPaciente,)";
         try{   
             $statement=$this->conexion->prepare($sql);
            // $statement->bindParam(":idRespuesta",$idRespuesta);
@@ -29,7 +29,7 @@
             $statement->bindParam(":descripcion_Respuesta",$descripcion_Respuesta);
             $statement->bindParam(":idPregunta",$idPregunta);
             $statement->bindParam(":idPaciente",$idPaciente);
-            $statement->bindParam(":idTratamiento",$idTratamiento);
+         
             $statement->execute();
             $count=$statement->rowCount();
             if($count)

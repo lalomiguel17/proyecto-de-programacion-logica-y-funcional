@@ -3,7 +3,6 @@
         $tratamiento=new Tratamiento();
         return $tratamiento->AccessTratamiento($request);
     }
-    
     class Tratamiento{
         private $conexion;
         function __construct(){            
@@ -15,13 +14,15 @@
         $idTratamiento = $data->idTratamiento;
         $Nombre_Tratamiento = $data->Nombre_Tratamiento;
         $Descripcion = $data->Descripcion;
+        $idpaciente=$data->idpaciente;
         $response;
-        $sql = "INSERT INTO Tratamientos(idTratamiento,Nombre_Tratamiento,Descripcion)VALUES(:idTratamiento,:Nombre_Tratamiento,:Descripcion)";
+        $sql = "INSERT INTO Tratamientos(idTratamiento,Nombre_Tratamiento,Descripcion,idpaciente)VALUES(:idTratamiento,:Nombre_Tratamiento,:Descripcion,:idpaciente)";
         try{   
             $statement=$this->conexion->prepare($sql);
             $statement->bindParam(":idTratamiento",$idTratamiento);
             $statement->bindParam(":Nombre_Tratamiento",$Nombre_Tratamiento);
             $statement->bindParam(":Descripcion",$Descripcion);
+            $statement->bindParam(":idpaciente",$idpaciente);
             $statement->execute();
             $count=$statement->rowCount();
             if($count)
