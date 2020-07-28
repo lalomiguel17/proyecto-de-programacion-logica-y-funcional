@@ -21,7 +21,7 @@
 
         $response;
         $sql = "INSERT INTO Respuestas(porcentaje,descripcion_Respuesta,idPregunta,idPaciente)
-        VALUES(:porcentaje,:descripcion_Respuesta,:idPregunta,:idPaciente,)";
+        VALUES(:porcentaje,:descripcion_Respuesta,:idPregunta,:idPaciente)";
         try{   
             $statement=$this->conexion->prepare($sql);
            // $statement->bindParam(":idRespuesta",$idRespuesta);
