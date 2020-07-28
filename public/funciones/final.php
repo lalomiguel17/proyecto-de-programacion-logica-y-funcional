@@ -20,9 +20,10 @@ class Test{
         $response;
        // $sql="SELECT * FROM Respuestas;";    
 
-       $sql="SELECT   Nombre_Tratamiento
-       from Pacientes P, Respuestas R, Tratamientos T 
-       where (T.idTratamiento = R.idTratamiento) AND (R.idPaciente = P.idPaciente)  AND  P.Nombre_Paciente = 'Tomas';";  
+       $sql="SELECT Nombre_Tratamiento
+       from Pacientes P,  Tratamientos T 
+       where (T.idPaciente = P.idPaciente)
+       AND  P.idPaciente = '1';";  
 
         try{            
             $statement=$this->conexion->prepare($sql);            

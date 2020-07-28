@@ -20,10 +20,10 @@ class Holaquehace{
         $response;
        // $sql="SELECT * FROM Respuestas;";    
 
-       $sql="SELECT   R.porcentaje, sum(R.porcentaje)
-       from Pacientes P, Respuestas R, Tratamientos T 
-       where (T.idTratamiento = R.idTratamiento) AND (R.idPaciente = P.idPaciente)
-       AND  P.Nombre_Paciente = 'Tomas';";  
+       $sql="SELECT R.porcentaje, sum(R.porcentaje)
+       from Pacientes P, Respuestas R
+       where R.idPaciente = P.idPaciente
+       AND  P.idPaciente = '2';";  
 
         try{            
             $statement=$this->conexion->prepare($sql);            

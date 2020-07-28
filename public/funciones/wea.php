@@ -20,9 +20,11 @@ class Wea{
         $response;
        // $sql="SELECT * FROM Respuestas;";    
 
-       $sql="SELECT   Nombre_Tratamiento
-       from Pacientes P, Respuestas R, Tratamientos T 
-       where (T.idTratamiento = R.idTratamiento) AND (R.idPaciente = P.idPaciente)  AND  P.Nombre_Paciente = 'Tomas';";  
+       $sql="SELECT  R.porcentaje
+       from Pacientes P, Respuestas R
+       where (P.idPaciente = R.idPaciente) 
+       AND  P.idPaciente= '';
+       ;";  
 
         try{            
             $statement=$this->conexion->prepare($sql);            
