@@ -23,7 +23,7 @@ class Wea{
        $sql="SELECT  R.porcentaje
        from Pacientes P, Respuestas R
        where (P.idPaciente = R.idPaciente) 
-       AND  P.idPaciente= '';
+       AND  P.idPaciente= '2'
        ;";  
 
         try{            
